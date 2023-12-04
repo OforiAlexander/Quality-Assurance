@@ -13,6 +13,9 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+            backgroundColor: {
+                "bg_gradient": "#009688 "
             }
         },
     },

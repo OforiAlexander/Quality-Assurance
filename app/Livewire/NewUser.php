@@ -2,13 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
 use Livewire\Component;
 
-class NewReports extends Component
+class NewUser extends Component
 {
     public function render()
     {
-        return view('livewire.new-reports');
+        return view('livewire.new-user');
     }
 }

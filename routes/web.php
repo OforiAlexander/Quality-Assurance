@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create']);
 
-Route::get('/reports', function () {
-    return view('Reports');
-})->name('reports');
+Route::get('/reports', [ReportController::class, 'index'])->name('reports');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,6 +29,10 @@ Route::get('/dashboard', function () {
 Route::get('/new', function() {
     return view('new');
 })->name('new');
+
+Route::get('/users', [UsersController::class, 'create'])->name('users');
+
+Route::post('/users/store', [UsersController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

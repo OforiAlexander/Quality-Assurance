@@ -7,7 +7,8 @@
          
         </div>
         <div class="rounded-lg my-6 mx-auto max-w-5xl border border-red-50 px-6 py-4">
-            <div class="py-3 px-2 grid grid-cols-3 space-x-4"><a href="#">
+            <div class="py-3 px-2 grid grid-cols-3 space-x-4">
+                <a href="{{ route('users') }}">
                     <div
                         class="rounded-sm py-4 px-6 flex items-center justify-start gap-6 hover:scale-105 transition duration-300 bg-gradient-to-r from-cyan-400 to-blue-400">
 
