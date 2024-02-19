@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create']);
 
-Route::get('/reports', [ReportController::class, 'index'])->name('reports');
+Route::get('/reports', [ReportsController::class, 'index'])->name('reports');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/reports/store',[ReportsController::class, "store"]);
+
+Route::get('/dashboard', [UsersController::class, "dashboard"])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/new', function() {
     return view('new');

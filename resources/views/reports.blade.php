@@ -19,7 +19,7 @@
                 <h3 class="text-gray-800 text-2xl font-light capitalize">Quality Assurance Total Reports</h3>
 
                 {{-- List Table --}}
-                <div x-data="{ open: false }">
+                <div x-data="{ open: true }">
                     <div class="py-2 bg-gree from-re from-gree px-4 bg-bg_gradient my-4">
                         <div class="flex items-center justify-between flex-nowrap px-3" id="accordion-open-heading-1">
 
@@ -53,9 +53,7 @@
                                             stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <input type="text" id="table-search"
-                                    class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 shadow"
-                                    placeholder="Find Reports">
+                                <x-search placeholder="Search By Department Unit, Title, Role"/>
                             </div>
                         </div>
                         <div class="relative overflow-x-auto shadow-md">
@@ -64,14 +62,21 @@
                                     class="text-base font-medium text-gray-600 capitalize bg-gray-100">
                                     <tr class="">
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Administrator Name
+                                            Facilitator
                                         </th>
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Adminstrator Department
+                                            Title
                                         </th>
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Report
+                                            Date
                                         </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Attendees Number
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Summary
+                                        </th>
+                                        
                                         
                                     </tr>
                                 </thead>
@@ -80,26 +85,30 @@
                                     <tr
                                         class="bg-gray-100 border-b hover:bg-gray-200">
                                         
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                            {{ Auth::user()->first_name }}
+                                        </td>
                                         <th scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ $report->name }}
+                                            {{ $report->title }}
                                         </th>
                                         <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ $report->department }}
+                                            {{ $report->date }}
                                         </td>
                                         <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                            <a href="#" class="font-medium text-cyan-500 hover:text-cyan-600 transition">Report</a>
+                                            {{ $report->attendees_number }}
                                         </td>
-                                        
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                            {{ $report->summary }}
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{-- Table Ends --}}
                         </div>
-
                     </div>
                 </div>
-                {{-- Table Ends --}}
             </div>
         </div>
     </div>

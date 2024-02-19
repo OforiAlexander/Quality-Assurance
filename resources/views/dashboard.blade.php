@@ -21,7 +21,9 @@
                         </div>
                         <div id="users" class="text-left-px-4 py-4 text-base text-white uppercase font-medium">
                             <h3 class="text-2xl text-white uppercase tracking-wide">Users</h3>
-                            <span class="text-lg font-light text-white capitalize">99</span>
+                            <span class="text-lg font-light text-white capitalize">
+                              {{ $user }}
+                            </span>
                         </div>
 
 
@@ -41,7 +43,9 @@
                         </div>
                         <div id="users" class="text-left-px-4 py-4 text-base text-white uppercase font-medium">
                             <h3 class="text-2xl text-white uppercase tracking-wide">Reports</h3>
-                            <span class="text-lg font-light text-white capitalize">1900</span>
+                            <span class="text-lg font-light text-white capitalize">
+                                {{ $reports }}
+                            </span>
                         </div>
 
                     </div>
@@ -60,7 +64,7 @@
                         </div>
                         <div id="users" class="text-left-px-4 py-4 text-base text-white uppercase font-medium">
                             <h3 class="text-2xl text-white uppercase tracking-wide">Updates</h3>
-                            <span class="text-lg font-light text-white capitalize">20 New Updates</span>
+                            <span class="text-lg font-light text-white capitalize">Data Not Populated</span>
                         
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reports;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -9,21 +10,29 @@ use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 {
 
-    public function create() 
-    {   
-        $users = User::all();
+    public function create()
+    {
+        $users = User::latest();
+
+        if (request('search')) {
+            $users
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('department_unit', 'like', '%' . request('search') . '%')
+                ->orWhere('user_role', 'like', '%' . request('search') . '%');
+        }
+
         return view('users', [
-            'users' => $users
+            'users' => $users->paginate(10)
         ]);
     }
 
     public function store()
     {
         $attributes = request()->validate([
-            'name' => 'required',
-            'department' => 'required',
-            'role' => 'required',
-            'phone' => 'required',
+            'title' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'department_unit' => 'required',
             'email' => 'required|email|unique:users,email',
         ]);
 
@@ -31,6 +40,16 @@ class UsersController extends Controller
 
         $user = User::create($attributes);
 
-        return redirect()->route('profile.update', ['user' => $user->id])->with('success', 'User Created');    }
-    
+        return redirect()->route('users', ['user' => $user->id])->with('success', 'User Created');
+    }
+
+    public function dashboard(User $user, Reports $reports)
+    {
+        $totalUsers = $user->count();
+        $totalReports = $reports->count();
+        return view('dashboard',[
+            'user'=> $totalUsers,
+            'reports'=>$totalReports
+        ]);
+    }
 }
