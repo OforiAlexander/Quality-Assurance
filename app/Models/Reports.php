@@ -15,10 +15,20 @@ class Reports extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'date',
-        'facilitator',
-        'attendees_number',
+        'center',
+        'quater',
+        'strategic_focus',
         'summary',
+        'strategic_objective',
+        'strategic_initiative',
+        'date',
+        'comment_quater',
+        'status',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reports;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -45,8 +46,8 @@ class UsersController extends Controller
 
     public function dashboard(User $user, Reports $reports)
     {
-        $totalUsers = $user->count();
-        $totalReports = $reports->count();
+        $totalUsers =$user->count();
+        $totalReports = Auth::user()->reports()->count();
         return view('dashboard',[
             'user'=> $totalUsers,
             'reports'=>$totalReports

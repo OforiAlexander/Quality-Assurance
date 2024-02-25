@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,11 +14,16 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 255);
-            $table->string('facilitator',60)->nullable(false);
-            $table->integer('attendees_number')->default(1);
+            $table->string('center',60)->nullable(false);
+            $table->string('quater',35)->nullable(false);
             $table->string('summary')->nullable(false);
+            $table->string('strategic_focus');
+            $table->string('strategic_objective')->nullable(false);
+            $table->string('strategic_initiative')->nullable(false);
             $table->date('date');
+            $table->string('comment_quater');
+            $table->string('status')->nullable(false);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

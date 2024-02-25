@@ -62,19 +62,37 @@
                                     class="text-base font-medium text-gray-600 capitalize bg-gray-100">
                                     <tr class="">
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Facilitator
-                                        </th>
-                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Title
-                                        </th>
-                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Date
-                                        </th>
-                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Attendees Number
+                                            Facilitator/Responsible Person
                                         </th>
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Summary
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Reporting Quater
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Name Of Center/Faculty/Unit
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Strategic Focus
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Strategic Objective No
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Strategic Initiative
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Commencement Date
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Completion Date
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Quater's Update/Progress
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Status
                                         </th>
                                         
                                         
@@ -82,25 +100,44 @@
                                 </thead>
                                 <tbody class="text-base font-medium">
                                     @foreach ($reports as $report)
-                                    <tr
-                                        class="bg-gray-100 border-b hover:bg-gray-200">
+                                    <tr class="bg-gray-100">
                                         
-                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ Auth::user()->first_name }}
+                                        <td 
+                                            class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                            {{ $report->user->first_name . ' '. $report->user->middle_names. ' '. $report->user->last_name }}
                                         </td>
-                                        <th scope="row"
-                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ $report->title }}
-                                        </th>
-                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ $report->date }}
-                                        </td>
-                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                            {{ $report->attendees_number }}
-                                        </td>
-                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                        <td
+                                            class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
                                             {{ $report->summary }}
                                         </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->quater }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->center }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->strategic_focus }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->strategic_objective }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->strategic_initiative }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->date }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->updated_at->diffForHumans() }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->comment_quater }}
+                                        </td>
+                                        <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
+                                            {{ $report->status }}
+                                        </td>
+                                        
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -20,11 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'title',
         'first_name',
-        'middle_name',
-        'last_name',
-        'department_unit',
         'email',
-        'password'
+        'last_name',
+        'role',
+        'password',
+        "email",
     ];
 
     /**
@@ -46,4 +46,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function hasRole(String $role): bool
+    {
+        return $this->role === $role;
+    }
+
+    public function reports()
+    {
+        return $this->hasMany(Reports::class);
+    } 
 }

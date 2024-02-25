@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id('comment_id');
             $table->text('comment_text')->nullable(false);
             $table->date('date_created')->nullable(false);
-            $table->unsignedMediumInteger('user_id')->nullable(false);
             $table->unsignedBigInteger('document_id')->nullable(false);
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('document_id')->references('document_id')->on('documents')->onUpdate('cascade')->onDelete('cascade');
         });
     }
