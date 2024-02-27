@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AllUserReportsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\NewReportsController;
@@ -41,6 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'role:admin'])->name('admin');
-
+Route::middleware(['auth', 'role:admin'])->group(function()
+{
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::get('/all', [AllUserReportsController::class, 'index'])->name('admin.reports');
+});
 require __DIR__.'/auth.php';

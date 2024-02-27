@@ -46,6 +46,7 @@ class UsersController extends Controller
 
     public function dashboard(User $user, Reports $reports)
     {
+        
         $totalUsers =$user->count();
         $totalReports = Auth::user()->reports()->count();
         return view('dashboard',[

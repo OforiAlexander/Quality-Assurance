@@ -29,7 +29,7 @@
 
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ route('admin.reports') }}">
                     <div
                         class="rounded-sm py-4 px-6 flex items-center justify-start gap-6 hover:scale-105 transition duration-300 bg-gradient-to-r from-red-300 to-red-500">
 
