@@ -153,25 +153,45 @@
                                     <tr class="">
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Administrator Name
+                                            Person Name
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Faculty
+                                            Year
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Administrator Email
+                                            Reporting Quarter
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Admin Role
+                                            Name Of Center/Unit etc
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Action
-                                        </th>
+                                            Strategic Focus
 
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Strategic Objectives No.
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Strategic Initiative
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Commencement Date
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Update/Progress Made
+                                        </th>
+                                        <th scope="col"
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
+                                            Status
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-base font-medium">
@@ -180,10 +200,16 @@
 
                                             <th scope="row"
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border-r-2 border-b-2 border-gray-300 shadow">
-                                                {{ $user->name }}
+                                                {{ Auth::user()->first_name . ' '. Auth::user()->middle_names .' ' . Auth::user()->last_name }}
                                             </th>
                                             <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                                {{ $user->department }}
+                                                {{ $user->middle_names   }}
+                                            </td>
+                                            <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                                {{ $user->last_name }}
+                                            </td>
+                                            <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                                {{ $user->middle_name }}
                                             </td>
                                             <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
                                                 {{ $user->email }}

@@ -11,7 +11,7 @@
         </div>
         <div class="rounded-lg my-6 mx-auto max-w-5xl border border-red-50 px-6 py-4">
             <div>
-                @livewire('new-reports')
+                @livewire('new-user')
             </div>
         </div>
         <div class="bg-white max-w-6xl rounded-md border border-gray-50 py-4 px-4 my-4 shadow-md">

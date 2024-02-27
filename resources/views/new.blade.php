@@ -11,6 +11,7 @@
         </div>
         <div class="rounded-lg my-6 mx-auto max-w-5xl border border-red-50 px-6 py-4">
             <div>
+                @livewire('new-reports')
             </div>
         </div>
     </div>

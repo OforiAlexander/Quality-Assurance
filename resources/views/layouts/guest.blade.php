@@ -21,16 +21,17 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <div>
-            <a href="/">
-                <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-            </a>z
-        </div>
-
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-            {{ $slot }}
+<body class="font-sans text-gray-900 antialiased">
+    <x-application-image :image="asset('img/UPSA (1).jpg')" class=" w-30" style="background-position: center center; background-repeat:no-repeat; background-size:cover;"/>
+    <div class="flex absolute top-0 right-0 w-full justify-center items-center h-screen">
+        <div class="bg-gray-100 p-10 rounded-lg shadow-md w-full md:max-w-md">
+            <div class="text-center">
+                <x-application-logo :image="asset('img/upsa.jpg')"/>
+            </div>
+            
+            <div class="container">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 </body>
