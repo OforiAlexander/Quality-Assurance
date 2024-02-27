@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Reports;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ReportsController extends Controller
 {
+
+    public $selectedOptions;
+    public $listed = [];
+
     public function index()
     {
-        $reports = Reports::latest();
+        $reports = Auth::user()->reports()->latest();
 
         if (request('search')) {
             $reports
@@ -27,18 +32,36 @@ class ReportsController extends Controller
 
     public function store()
     {
-        
-        $attributes = request()->validate([
-            'title' => 'required',
-            'facilitator' => 'required',
-            'attendees_number' => 'required|integer',
-            'summary' => 'required|string',
-            'date' => 'required|date',
-        ]);
+        $message = [
+            'summary' => 'This reporting year must be a valid date'
+        ];
 
+        $attributes = request()->validate([
+            'center' => 'required',
+            'quater' => 'required',
+            'summary' => 'required|date_format:Y',
+            'strategic_focus' => 'required',
+            'strategic_objective' => 'required',
+            'strategic_initiative' => 'required',
+            'date' => 'required|date',
+            'comment_quater' => 'required',
+            'status' => 'required',
+        ], $message);
+
+        $attributes['user_id'] = Auth::id();
         $reports = Reports::create($attributes);
 
-        return redirect()->route('reports', ['reports' => $reports->id])->with('success', 'Reports Created');
+        return redirect()->route('reports', [
+            'reports' => $reports->id
+        ])->with('success', 'Reports Created');
     }
 
+    // Dynamic Selecters
+    public function strategicObjectives($value)
+    {
+
+        if ($value == "PEOPLE") {
+            # code...
+        }
+    }
 }

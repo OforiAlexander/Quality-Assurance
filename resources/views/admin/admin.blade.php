@@ -1,14 +1,14 @@
 <x-app-layout>
     <div class="sm:ml-64 px-8 py-2">
         <div id="links" class="w-full py-2 px-6 my-1 flex flex-nowrap items-start justify-start gap-2 uppercase text-cyan-700 text-sm">
-            <a wire:navigate href="{{ route('dashboard') }}" class="hover:text-gray-800 transition duration-200">Quality Assurance</a>
+            <a wire:navigate href="{{ route('admin') }}" class="hover:text-gray-800 transition duration-200">Quality Assurance</a>
             <span>/</span>
-            <a wire:navigate href="{{ route('dashboard') }}" class="hover:text-gray-800 transition duration-200">Dashboard</a>
+            <a wire:navigate href="{{ route('admin') }}" class="hover:text-gray-800 transition duration-200">Dashboard</a>
          
         </div>
         <div class="rounded-lg my-6 mx-auto max-w-5xl border border-red-50 px-6 py-4">
-            <div class="py-3 px-2 grid grid-cols-2 space-x-4">
-                {{-- <a href="{{ route('users') }}">
+            <div class="py-3 px-2 grid grid-cols-2 gap-4">
+                <a href="{{ route('users') }}">
                     <div
                         class="rounded-sm py-4 px-6 flex items-center justify-start gap-6 hover:scale-105 transition duration-300 bg-gradient-to-r from-cyan-400 to-blue-400">
 
@@ -22,14 +22,14 @@
                         <div id="users" class="text-left-px-4 py-4 text-base text-white uppercase font-medium">
                             <h3 class="text-2xl text-white uppercase tracking-wide">Users</h3>
                             <span class="text-lg font-light text-white capitalize">
-                              {{ $user }}
+                              {{ $users }}
                             </span>
                         </div>
 
 
                     </div>
-                </a> --}}
-                <a wire:navigate href="{{ route('reports') }}">
+                </a>
+                <a href="{{ route('admin.reports') }}">
                     <div
                         class="rounded-sm py-4 px-6 flex items-center justify-start gap-6 hover:scale-105 transition duration-300 bg-gradient-to-r from-red-300 to-red-500">
 
@@ -67,6 +67,27 @@
                             <span class="text-lg font-light text-white capitalize">Click To GO</span>
                         
                         </div>
+                    </div>
+                </a>
+                <a  wire:navigate href="{{ route('reports') }}">
+                    <div
+                        class="rounded-sm py-4 px-6 flex items-center justify-start gap-6 hover:scale-105 transition duration-300 bg-gradient-to-r from-cyan-400 to-blue-400">
+
+                        <div class="p-1">
+                            <svg class="text-gray-800 w-14" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 18">
+                                <path
+                                    d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                            </svg>
+                        </div>
+                        <div id="users" class="text-left-px-4 py-4 text-base text-white uppercase font-medium">
+                            <h3 class="text-2xl text-white uppercase tracking-wide">Your Reports</h3>
+                            <span class="text-lg font-light text-white capitalize">
+                              {{ $adminReports }}
+                            </span>
+                        </div>
+
+
                     </div>
                 </a>
             </div>

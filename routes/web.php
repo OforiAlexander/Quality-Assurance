@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AllUserReportsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\NewReportsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReportsController;
@@ -21,19 +24,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create']);
 
-Route::get('/reports', [ReportsController::class, 'index'])->name('reports');
+Route::get('/reports', [ReportsController::class, 'index'])->middleware('auth')->name('reports');
 
 Route::post('/reports/store',[ReportsController::class, "store"]);
 
-Route::get('/dashboard', [UsersController::class, "dashboard"])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [UsersController::class, "dashboard"])->middleware(['auth', 'verified', 'role:user'])->name('dashboard');
 
-Route::get('/new', function() {
-    return view('new');
-})->name('new');
+Route::get('/new', [NewReportsController::class, 'index'])->name('new');
 
-Route::get('/users', [UsersController::class, 'create'])->name('users');
+Route::get('/users', [UsersController::class, 'create'])->middleware('role:admin')->name('users');
 
-Route::post('/users/store', [UsersController::class, 'store']);
+Route::post('/users/store', [UsersController::class, 'store'])->middleware('role:admin');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,4 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth', 'role:admin'])->group(function()
+{
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::get('/all', [AllUserReportsController::class, 'index'])->name('admin.reports');
+});
 require __DIR__.'/auth.php';

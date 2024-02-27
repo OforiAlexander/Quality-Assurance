@@ -22,9 +22,8 @@ return new class extends Migration
             $table->string('keywords', 50)->nullable();
             $table->string('doc_status', 20)->nullable();
             $table->string('access_control', 20)->nullable();
-            $table->unsignedMediumInteger('user_id')->nullable(false);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('strategic_id')->nullable(false);
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('strategic_id')->references('strategic_id')->on('strategic_initiatives')->onUpdate('cascade')->onDelete('cascade');
         });
     }

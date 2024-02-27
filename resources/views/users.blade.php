@@ -251,10 +251,10 @@
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Email
                                         </th>
-                                        <th scope="col"
+                                        {{-- <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Role
-                                        </th>
+                                        </th> --}}
                                         {{-- <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Action
@@ -279,9 +279,9 @@
                                             <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
                                                 {{ $user->email }}
                                             </td>
-                                            <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                                {{ $user->user_role }}
-                                            </td>
+                                            {{-- <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                                {{ $user->role }}
+                                            </td> --}}
                                             {{-- <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
                                                 <div class="flex flex-nowrap space-x-2">
                                                     <x-secondary-button class="bg-[#313c4f] rounded hover:bg-[#2c3648]"

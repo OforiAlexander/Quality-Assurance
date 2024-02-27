@@ -1,0 +1,1 @@
+@livewire('all-reports');
