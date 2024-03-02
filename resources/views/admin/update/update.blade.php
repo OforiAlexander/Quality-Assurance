@@ -99,10 +99,10 @@
                                                             name="summary">
                                                             <option value="Select A Quater" selected disabled>Select a
                                                                 quater</option>
-                                                            @foreach ($yearsRange as $year)
+                                                            {{-- @foreach ($yearsRange as $year)
                                                                 <option value="{{ $year }}">{{ $year }}
                                                                 </option>
-                                                            @endforeach
+                                                            @endforeach --}}
                                                         </x-text-select>
                                                         <x-input-error class="mt-2" :messages="$errors->get('summary')" />
                                                     </div>

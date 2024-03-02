@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="sm:ml-64 px-8 py-2">
+    <div class="px-8 py-2">
         <div id="links" class="w-full py-2 px-6 my-1 flex flex-nowrap items-start justify-start gap-2 uppercase text-cyan-700 text-sm">
             <a wire:navigate href="{{ route('dashboard') }}" class="hover:text-gray-800 transition duration-200">Quality Assurance</a>
             <span>/</span>
