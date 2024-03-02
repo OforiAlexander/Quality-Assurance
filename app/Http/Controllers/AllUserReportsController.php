@@ -14,4 +14,10 @@ class AllUserReportsController extends Controller
             'reports' => $reports->latest()
         ]);
     }
+
+    // Update Report Class
+    public function update(User $user, Reports $reports)
+    {
+        return view('admin.update.update');
+    }
 }

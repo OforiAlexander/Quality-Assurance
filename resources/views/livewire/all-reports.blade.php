@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="sm:ml-64 px-8 py-2">
+    <div class="px-8 py-2">
         <div id="links"
             class="w-full py-2 uppercase px-6 my-1 flex flex-nowrap items-start justify-start gap-2 text-cyan-700 text-sm">
             <a wire:navigate href="{{ route('admin') }}"
@@ -9,7 +9,7 @@
             <span>/</span>
             <a href="#" class="hover:text-gray-800 transition duration-200">All Reports</a>
         </div>
-        <div class="rounded-lg my-6 mx-auto max-w-5xl border border-red-50 px-6 py-4">
+        <div class="rounded-lg my-6 mx-auto border border-red-50 px-6 py-4">
             <div>
                 @livewire('new-reports')
             </div>
@@ -57,10 +57,13 @@
                             </div>
                         </div>
                         <div class="relative overflow-x-auto shadow-md">
-                            <table class="w-full text-sm text-left rtl:text-right text-gray-500 border border-gray-300">
+                            <table class="w-full table-auto text-sm whitespace-nowrap text-left rtl:text-right text-gray-500 border border-gray-300">
                                 <thead
                                     class="text-base font-medium text-gray-600 capitalize bg-gray-100">
                                     <tr class="">
+                                        <th scope="col" class="px-6 py-3 border-r-2 border-b-2 text-gray-50 border-gray-300 shadow bg-gray-800">
+                                            Action
+                                        </th>
                                         <th scope="col" class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Facilitator/Responsible Person
                                         </th>
@@ -101,7 +104,9 @@
                                 <tbody class="text-base font-medium">
                                     @foreach ($reports as $report)
                                     <tr class="bg-gray-100">
-                                        
+                                        <td class="px-6 py-4 bg-cyan-700">
+                                            <a href="{{ route('') }}" class="font-medium text-gray-50 p-1 hover:underline">Edit</a>
+                                        </td>
                                         <td 
                                             class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
                                             {{ $report->user->first_name . ' '. $report->user->middle_names. ' '. $report->user->last_name }}
