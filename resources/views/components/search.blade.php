@@ -1,4 +1,10 @@
 @props(['placeholder'])
+
+@php
+
+
+@endphp
+
 <div>
     <form action="#" method="GET">
         @csrf
