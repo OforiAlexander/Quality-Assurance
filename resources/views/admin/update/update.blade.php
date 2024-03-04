@@ -32,7 +32,7 @@
 
                                         <div class="w-1/2">
                                             <h3 class="text-gray-800 text-xl font-light capitalize">
-                                                Create A New Report
+                                                Edit/Update This Report
                                             </h3>
                                         </div>
                                         <a href="#" class="shrink-0" @click="open= !open">
@@ -51,7 +51,7 @@
                                 {{-- Table --}}
                                 <div x-show="open">
                                     <div class="py-2 pb-4 my-2">
-                                        <form action="/reports/store" method="POST" spellcheck="false">
+                                        <form action="" method="POST" spellcheck="false">
                                             @csrf
 
                                             <div class="px-3 py-2 space-y-6">
@@ -62,7 +62,7 @@
                                                         <x-text-input id="title" name="title" type="text"
                                                             class="mt-1 block w-full shadow cursor-not-allowed bg-gray-200"
                                                             :disabled="true"
-                                                            value="{{ Auth::user()->first_name . ' ' . Auth::user()->middle_names . ' ' . Auth::user()->last_name }}" />
+                                                            value="{{ old($report->user->first_name) }}" />
                                                     </div>
                                                     <div class="space-y-3 w-full">
                                                         <x-input-label for="center" :value="__('Name Of Center/Unit')"

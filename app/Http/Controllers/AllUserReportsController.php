@@ -15,9 +15,17 @@ class AllUserReportsController extends Controller
         ]);
     }
 
-    // Update Report Class
-    public function update(User $user, Reports $reports)
-    {
-        return view('admin.update.update');
-    }
+    // // Update Report Class
+    // public function update(User $user, Reports $reports)
+    // {
+    //     return view('admin.update.update',[
+    //         "reports" => $reports
+    //     ]);
+    // }
+
+    // // Update Report Class
+    // public function store()
+    // {
+    //     dd('working');
+    // }
 }
