@@ -162,8 +162,7 @@
                                             </div>
 
                                             <div class="px-4 py-4 mt-4">
-                                                <x-primary-button type="submit">Create
-                                                    New</x-primary-button>
+                                                <x-primary-button type="submit">Submit Report</x-primary-button>
                                             </div>
                                         </form>
                                     </div>

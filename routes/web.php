@@ -46,6 +46,6 @@ Route::middleware(['auth', 'role:admin'])->group(function()
 {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/all', [AllUserReportsController::class, 'index'])->name('admin.reports');
-    Route::get('/update', [AllUserReportsController::class, 'update'])->name('admin.update');
+    Route::get('/report/{$reports}/edit', [ReportsController::class, 'edit'])->name('admin.update');
 });
 require __DIR__.'/auth.php';

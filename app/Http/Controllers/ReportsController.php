@@ -56,12 +56,11 @@ class ReportsController extends Controller
         ])->with('success', 'Reports Created');
     }
 
-    // Dynamic Selecters
-    public function strategicObjectives($value)
+    //    update function
+    public function edit($id)
     {
-
-        if ($value == "PEOPLE") {
-            # code...
-        }
+        $report = Reports::find($id);
+        // dd($report);
+        return view('admin.update.update', compact('report'));
     }
 }

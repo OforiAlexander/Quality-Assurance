@@ -72,10 +72,10 @@
                                             class="px-6 py-3 border-r-2 border-b-2 text-gray-50 border-gray-300 shadow bg-gray-800">
                                             Action
                                         </th>
-                                        <th scope="col"
+                                        <!-- <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Facilitator/Responsible Person
-                                        </th>
+                                        </th> -->
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Summary
@@ -128,9 +128,9 @@
                                                     class="font-medium text-gray-50 p-1 hover:underline">Edit</a>
                                             </td>
 
-                                            <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
+                                            <!-- <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
                                                 {{ $report->user->first_name . ' ' . $report->user->middle_names . ' ' . $report->user->last_name }}
-                                            </td>
+                                            </td> -->
                                             <td
                                                 class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
                                                 {{ $report->summary }}
