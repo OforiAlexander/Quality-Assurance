@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('center',60)->nullable(false);
             $table->string('quater',35)->nullable(false);
-            $table->string('summary')->nullable(false);
+            $table->string('quater_year')->nullable(false);
             $table->string('strategic_focus');
             $table->string('strategic_objective')->nullable(false);
             $table->string('strategic_initiative')->nullable(false);

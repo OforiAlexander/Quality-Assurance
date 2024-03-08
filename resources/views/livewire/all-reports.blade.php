@@ -105,7 +105,7 @@
                                     @foreach ($reports as $report)
                                     <tr class="bg-gray-100">
                                         <td class="px-6 py-4 bg-cyan-700">
-                                            <a href="{{ route('admin.update', $report->id) }}" class="font-medium text-gray-50 p-1 hover:underline">Edit</a>
+                                            <a href="/reports/{{$report->id}}/edit" class="font-medium text-gray-50 p-1 hover:underline">Edit</a>
                                         </td>
                                         <td 
                                             class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">

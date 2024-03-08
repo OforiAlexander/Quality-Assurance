@@ -56,11 +56,13 @@ class ReportsController extends Controller
         ])->with('success', 'Reports Created');
     }
 
-    //    update function
-    public function edit($id)
-    {
-        $report = Reports::find($id);
-        // dd($report);
-        return view('admin.update.update', compact('report'));
-    }
+
+   public function edit($id)
+   {
+    $report = Reports::find($id);
+
+    // dd($report->user->first_name);
+    return view('admin.update.update', compact('report'));
+   }
+
 }

@@ -6,7 +6,7 @@
                 @if (Auth::user()->role === 'user')
                     <a wire:navigate href="{{ route('dashboard') }}"
                         class="hover:text-gray-800 transition duration-200">Dashboard</a>
-                    <span>/</span>
+                    <span>/</span> 
                 @else
                     <a wire:navigate href="{{ route('admin') }}" class="hover:text-gray-800 transition duration-200">Quality
                         Assurance</a>
@@ -23,8 +23,7 @@
         </div>
         <div class="bg-white max-w-6xl rounded-md border border-gray-50 py-4 px-4 my-4 shadow-md">
             <div class="px-4 py-2 mx-auto">
-                <h3 class="text-gray-800 text-2xl font-light capitalize">Quality Assurance Total Reports</h3>
-
+            <h3 class="text-gray-800 text-2xl font-light capitalize"> {{Auth::user()->first_name. " ". Auth::user()->middle_names. " ". Auth::user()->last_name. "'s"}} Reports</h3>
                 {{-- List Table --}}
                 <div x-data="{ open: true }">
                     <div class="py-2 bg-gree from-re from-gree px-4 bg-bg_gradient my-4">
@@ -62,6 +61,7 @@
                                 </div>
                                 <x-search placeholder="Search By Department Unit, Title, Role" />
                             </div>
+
                         </div>
                         <div class="relative overflow-x-auto shadow-md">
                             <table
@@ -78,7 +78,7 @@
                                         </th> -->
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Summary
+                                            Quater Year
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
