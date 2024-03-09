@@ -55,7 +55,6 @@ class ReportsController extends Controller
             'reports' => $reports->id
         ])->with('success', 'Reports Created');
     }
-
    public function edit($id)
    {
     $report = Reports::find($id);

@@ -21,8 +21,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+<body class="font-sans antialiased relative">
+    <img src="{{asset('/Asserts/upsa_logo.jpg')}}" alt="" class="w-full h-[100vh] bg-center bg-cover">
+    <div 
+    class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-transparent absolute top-0 left-0 w-full h-full"
+    >
         <div>
             <a href="/">
                 <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />

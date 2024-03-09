@@ -12,17 +12,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-          \App\Models\User::factory(20)->create();
+        //   \App\Models\User::factory(20)->create();
         //   \App\Models\Reports::factory(2)->create();
 
-        //  \App\Models\User::factory()->create([
-        //      'title' => 'Director Of R&C',
-        //      'email' => 'r&c@upsamail.gmail.com',
-        //      'first_name' => 'Alexander',
-        //      'last_name' => 'Ofori',
-        //      'department_unit' => 'Information Studies',
-        //      'user_role' => "Conduct Biannual Tracer Studies",
-        //      'user_password' => "password"
-        //  ]);
+         \App\Models\User::factory()->create([
+             'first_name' => 'Alexander',
+             'last_name' => 'Ofori',
+             'email' => 'alexander.example@example.org',
+             'title' => 'Director, R&C',
+             'department_unit' => 'Quality Assurance',
+             'role' => "admin",
+             'password' => "password"
+         ]);
     }
 }
