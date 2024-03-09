@@ -55,8 +55,6 @@ class ReportsController extends Controller
             'reports' => $reports->id
         ])->with('success', 'Reports Created');
     }
-
-
    public function edit($id)
    {
     $report = Reports::find($id);
@@ -64,5 +62,4 @@ class ReportsController extends Controller
     // dd($report->user->first_name);
     return view('admin.update.update', compact('report'));
    }
-
 }
