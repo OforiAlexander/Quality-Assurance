@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Quality_Assurance</title>
+        <title>UPSA STRATEGIC PLAN-(2022-2031)</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

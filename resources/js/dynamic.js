@@ -67,7 +67,7 @@ const dropdownA = document.getElementById('strategic_focus');
                 '5.Ensure effective risk management.',],
 
              CONTINUOUS_IMPROVEMENT: [
-                '1.Build a robust quality assurance system',
+                '1.Build a robust UPSA STRATEGIC PLAN-(2022-2031) system',
                 '2.Develop new, innovative and transformative academic programmes at the diploma, undergraduate and postgraduate levels and review old ones to ensure that our portfolio offerings reflect industry needs.',
                 '3.Continue to promote scholarship with professionalism as the hallmark of the University.',
                 '4.Stock the library with up-to-date teaching and learning materials and emphasize the importance of its utilization.',
@@ -368,7 +368,7 @@ const dropdownA = document.getElementById('strategic_focus');
         ],
 
             //CONTINUOUS IMPROVEMENT
-            '1.Build a robust quality assurance system': [
+            '1.Build a robust UPSA STRATEGIC PLAN-(2022-2031) system': [
             'Option 1 for One More', 
             'Option 2 for One More', 
             'Option 3 for One More', 

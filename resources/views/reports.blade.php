@@ -8,8 +8,7 @@
                         class="hover:text-gray-800 transition duration-200">Dashboard</a>
                     <span>/</span> 
                 @else
-                    <a wire:navigate href="{{ route('admin') }}" class="hover:text-gray-800 transition duration-200">Quality
-                        Assurance</a>
+                    <a wire:navigate href="{{ route('admin') }}" class="hover:text-gray-800 transition duration-200">UPSA STRATEGIC PLAN-(2022-2031)</a>
                     <span>/</span>
                 @endif
                 <a wire:navigate href="{{ route('reports') }}" class="hover:text-gray-800 transition duration-200">Reports</a>
@@ -86,7 +85,7 @@
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Name Of Center/Faculty/Unit
+                                            Center/Faculty/Unit/Intitute/School
                                         </th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
