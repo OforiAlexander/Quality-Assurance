@@ -46,7 +46,7 @@
                             <x-slot name="content">
                                 @if (Auth::user()->role === 'admin')
                                     <x-dropdown-link wire:navigate :href="route('reports')" :active="request()->routeIs('reports')">
-                                        {{ __('Quality Assurance Report') }}
+                                        {{ __('UPSA STRATEGIC PLAN-(2022-2031) Report') }}
                                     </x-dropdown-link>
                                     <!-- Total Reports -->
                                     <x-dropdown-link wire:navigate :href="route('admin.reports')" :active="request()->routeIs('admin.reports')">

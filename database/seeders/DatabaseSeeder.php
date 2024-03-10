@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
              'last_name' => 'Ofori',
              'email' => 'alexander.example@example.org',
              'title' => 'Director, R&C',
-             'department_unit' => 'Quality Assurance',
+             'department_unit' => 'UPSA STRATEGIC PLAN-(2022-2031)',
              'role' => "admin",
              'password' => "password"
          ]);

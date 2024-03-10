@@ -79,7 +79,7 @@
                                                             Affairs</option>
                                                         <option value="Director, CIEC" disabled>Director, CIEC</option>
                                                         <option value="Director, BDC" disabled>Director, BDC</option>
-                                                        <option value="Director, Quality Assurance" disabled>Director,
+                                                        <option value="Director, UPSA STRATEGIC PLAN-(2022-2031)" disabled>Director,
                                                             Quality
                                                             Assurance</option>
                                                         <option value="Registrar" disabled>Registrar</option>
@@ -135,7 +135,7 @@
                                                 <x-text-select id="department_unit" name="department_unit"
                                                     type="text" class="mt-1 block w-full shadow">
                                                     <option value="Research & Consultancy Center">Research &Consultancy Center</option>
-                                                    <option value="Quality Assurance Directorate">Quality AssuranceDirectorate</option>
+                                                    <option value="UPSA STRATEGIC PLAN-(2022-2031) Directorate">UPSA STRATEGIC PLAN-(2022-2031)Directorate</option>
                                                     <option value="Academic Affairs">Academic Affairs</option>
                                                     <option value="University Clinic">University Clinic</option>
                                                     <option value="VC">VC</option>
@@ -190,7 +190,7 @@
         </div>
         <div class="bg-white max-w-6xl rounded-md border border-gray-50 py-4 px-4 my-4 shadow-md">
             <div class="px-4 py-2 mx-auto">
-                <h3 class="text-gray-800 text-2xl font-light capitalize">Quality Assurance Users</h3>
+                <h3 class="text-gray-800 text-2xl font-light capitalize">UPSA STRATEGIC PLAN-(2022-2031) Users</h3>
 
                 {{-- List Table --}}
                 <div x-data="{ open: true }">
@@ -246,7 +246,7 @@
                                             Title
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">Responsibility</th>
+                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">Center/Faculty/Unit/Intitute/School</th>
                                         <th scope="col"
                                             class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
                                             Email

@@ -16,7 +16,7 @@
         </div>
         <div class="bg-white max-w-6xl rounded-md border border-gray-50 py-4 px-4 my-4 shadow-md">
             <div class="px-4 py-2 mx-auto">
-                <h3 class="text-gray-800 text-2xl font-light capitalize">Quality Assurance Total Reports</h3>
+                <h3 class="text-gray-800 text-2xl font-light capitalize">UPSA STRATEGIC PLAN-(2022-2031) Total Reports</h3>
 
                 {{-- List Table --}}
                 <div x-data="{ open: true }">
