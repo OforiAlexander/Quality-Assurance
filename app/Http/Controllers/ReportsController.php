@@ -33,13 +33,13 @@ class ReportsController extends Controller
     public function store()
     {
         $message = [
-            'summary' => 'This reporting year must be a valid date'
+            'quater_year' => 'This reporting year must be a valid date'
         ];
 
         $attributes = request()->validate([
             'center' => 'required',
             'quater' => 'required',
-            'summary' => 'required|date_format:Y',
+            'quater_year' => 'required|date_format:Y',
             'strategic_focus' => 'required',
             'strategic_objective' => 'required',
             'strategic_initiative' => 'required',

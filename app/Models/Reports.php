@@ -18,7 +18,7 @@ class Reports extends Model
         'center',
         'quater',
         'strategic_focus',
-        'summary',
+        'quater_year',
         'strategic_objective',
         'strategic_initiative',
         'date',

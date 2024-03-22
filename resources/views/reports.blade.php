@@ -132,7 +132,7 @@
                                             </td> -->
                                             <td
                                                 class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->summary }}
+                                                {{ $report->quater_year }}
                                             </td>
                                             <td
                                                 class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">

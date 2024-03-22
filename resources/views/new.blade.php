@@ -77,8 +77,8 @@
                                                         <x-input-error class="mt-2" :messages="$errors->get('quater')" />
                                                     </div>
                                                     <div class="space-y-3 w-full">
-                                                        <x-input-label for="summary" :value="__('Reporting Quater Year ')" class="px-3" />
-                                                        <x-text-select class="mt-1 block w-full shadow" id="summary" name="summary">
+                                                        <x-input-label for="quater_year" :value="__('Reporting Quater Year ')" class="px-3" />
+                                                        <x-text-select class="mt-1 block w-full shadow" id="quater_year" name="quater_year">
                                                             <option value="Select A Quater" selected disabled>Select a
                                                                 quater</option>
                                                             @foreach ($yearsRange as $year)
@@ -86,7 +86,7 @@
                                                             </option>
                                                             @endforeach
                                                         </x-text-select>
-                                                        <x-input-error class="mt-2" :messages="$errors->get('summary')" />
+                                                        <x-input-error class="mt-2" :messages="$errors->get('quater_year')" />
                                                     </div>
                                                 </div>
                                                 <div class="grid gap-6 place-items-center w-full">

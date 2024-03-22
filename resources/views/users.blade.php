@@ -135,7 +135,7 @@
                                                 <x-text-select id="department_unit" name="department_unit"
                                                     type="text" class="mt-1 block w-full shadow">
                                                     <option value="Research & Consultancy Center">Research &Consultancy Center</option>
-                                                    <option value="UPSA STRATEGIC PLAN-(2022-2031) Directorate">UPSA STRATEGIC PLAN-(2022-2031)Directorate</option>
+                                                    <option value="UPSA STRATEGIC PLAN-(2022-2031) Directorate">Quality Assurance Directorate</option>
                                                     <option value="Academic Affairs">Academic Affairs</option>
                                                     <option value="University Clinic">University Clinic</option>
                                                     <option value="VC">VC</option>
