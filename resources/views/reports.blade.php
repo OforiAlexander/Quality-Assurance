@@ -49,7 +49,7 @@
 
                     {{-- Table --}}
                     <div x-cloak x-show="open">
-                        <div class="pb-4 my-2">
+                        {{-- <div class="pb-4 my-2">
                             <label for="table-search" class="sr-only">Search</label>
                             <div class="relative mt-1">
                                 <div
@@ -60,122 +60,10 @@
                                             stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <x-search placeholder="Search By Department Unit, Title, Role" />
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="relative overflow-x-auto shadow-md">
-                            <table
-                                class="w-full text-sm text-left table-auto whitespace-nowrap rtl:text-right text-gray-500 border border-gray-300">
-                                <thead class="text-base font-medium text-gray-600 capitalize bg-gray-100">
-                                    <tr class="">
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 text-gray-50 border-gray-300 shadow bg-gray-800">
-                                            Action
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Facilitator/Responsible Person
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Summary
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Reporting Quater
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Name Of Center/Faculty/Unit
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Strategic Focus
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Strategic Objective No
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Strategic Initiative
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Commencement Date
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Completion Date
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Quater's Update/Progress
-                                        </th>
-                                        <th scope="col"
-                                            class="px-6 py-3 border-r-2 border-b-2 border-gray-300 shadow">
-                                            Status
-                                        </th>
-
-
-                                    </tr>
-                                </thead>
-                                <tbody class="text-base font-medium">
-                                    @foreach ($reports as $report)
-                                        <tr class="bg-gray-100">
-                                            <td class="px-6 py-4 bg-cyan-700">
-                                                <a href="#"
-                                                    class="font-medium text-gray-50 p-1 hover:underline">Edit</a>
-                                            </td>
-
-                                            <td class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow">
-                                                {{ $report->user->first_name . ' ' . $report->user->middle_names . ' ' . $report->user->last_name }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->summary }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->quater }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->center }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->strategic_focus }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->strategic_objective }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->strategic_initiative }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->date }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->updated_at->diffForHumans() }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->comment_quater }}
-                                            </td>
-                                            <td
-                                                class="px-6 py-4 border-r-2 border-b-2 border-gray-300 shadow hover:bg-gray-50 cursor-pointer">
-                                                {{ $report->status }}
-                                            </td>
-
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                         @livewire('filter-search')
                             {{-- Table Ends --}}
                         </div>
                     </div>

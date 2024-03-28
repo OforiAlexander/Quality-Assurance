@@ -27,6 +27,13 @@ class Reports extends Model
         'user_id'
     ];
 
+    public function scopeSearch($query, $value)
+    {
+        $query->where('quater', 'LIKE', "%{$value}%")
+            ->orWhere('summary', 'LIKE', "%{$value}%")
+            ->orWhere('strategic_focus', 'LIKE', "%{$value}%");
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
